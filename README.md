@@ -2,6 +2,8 @@
 
 React + TypeScript + Vite frontend for the URL Shortener app. The UI lets users create short links, view saved URLs, copy short URLs, delete entries, and see click counts returned by the backend.
 
+- Backend: <a href="https://github.com/I-k-a-r-o-s/url-shortener-backend" target="_blank" >Visit</a>
+
 ## Tech Stack
 
 - React 19
