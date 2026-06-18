@@ -1,7 +1,7 @@
 import { api } from "../api/axios";
 import { MdOutlineContentCopy, MdOutlineDeleteOutline } from "react-icons/md";
 import toast from "react-hot-toast";
-import { useAppContext } from "../hooks/useAppContext";
+import useAppContext from "../hooks/useAppContext";
 
 const UrlTable = () => {
   const { data, fetchUrlData, loading, setLoading } = useAppContext();
