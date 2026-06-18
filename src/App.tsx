@@ -6,13 +6,17 @@ import UrlTable from "./components/UrlTable"
 
 const App = () => {
   return (
-    <>
-    <Toaster/>
-    <Header/>
-    <Home/>
-    <UrlTable/>
-    <Footer/>
-    </>
+    <div className="min-h-screen bg-base-200 text-base-content">
+      <Toaster />
+      <div className="flex min-h-screen flex-col">
+        <Header />
+        <main className="flex-1">
+          <Home />
+          <UrlTable />
+        </main>
+        <Footer />
+      </div>
+    </div>
   )
 }
 
