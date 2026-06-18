@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import type { urlTypes } from "../types/types";
 import { api } from "../api/axios";
 import toast from "react-hot-toast";
@@ -10,7 +10,7 @@ type AppContextType = {
   setLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const appContext = createContext<AppContextType | undefined>(undefined);
+export const appContext = createContext<AppContextType | undefined>(undefined);
 
 export const AppContextProvider = ({
   children,
@@ -26,6 +26,7 @@ export const AppContextProvider = ({
       setData(data.shortUrls);
     } catch (error) {
       toast.error("Internal Server Error!");
+      console.log("Error in fetchUrlData!:", error);
     }
   };
 
@@ -43,12 +44,4 @@ export const AppContextProvider = ({
   return (
     <appContext.Provider value={appValues}>{children}</appContext.Provider>
   );
-};
-
-export const useAppContext = () => {
-  const context = useContext(appContext);
-  if (!context) {
-    throw new Error("useAppContext must be used inside AppContextProvider");
-  }
-  return context;
 };
